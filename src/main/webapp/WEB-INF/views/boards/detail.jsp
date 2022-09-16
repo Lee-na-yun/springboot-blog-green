@@ -8,7 +8,7 @@
 
 		<div class="d-flex">
 		
-			<a href="#" class="btn btn-warning">수정하러가기</a>
+			<a href="/boards/${boards.id}/updateForm" class="btn btn-warning">수정하러가기</a>
 
 			<form>
 				<button class="btn btn-danger">삭제</button>
@@ -17,15 +17,32 @@
 
 
 	<br />
-	<div>
-		<h3>제목입니다</h3>
+	<div class="d-flex justify-content-between">
+		<h3>${boards.title}</h3>
+		<div>좋아요수 : 10 <i id="iconHeart" class="fa-regular fa-heart"></i></div>
 	</div>
 	<hr />
 
-	<div>내용입니다</div>
+	<div>${boards.content}</div>
 
 
 </div>
+<script>
+	$("#iconHeart").css("color","red");
+	$("#iconHeart").click((event)=>{
+		let check = $("#iconHeart").hasClass("fa-regular");
+		console.log(check);
+		
+		if(check == true){
+			$("#iconHeart").removeClass("fa-regular");
+			$("#iconHeart").addClass("fa-solid");
+			$("#iconHeart").css("color","red");
+		}else{
+			$("#iconHeart").removeClass("fa-solid");
+			$("#iconHeart").addClass("fa-regular");
+		}
+	});
+</script>
 
 <%@ include file="../layout/footer.jsp"%>
 

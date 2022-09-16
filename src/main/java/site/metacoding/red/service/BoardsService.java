@@ -26,7 +26,7 @@ public class BoardsService {
 		if (page == null) {
 			page = 0;
 		}
-		int startNum = page * 3;
+		int startNum = page * 5;
 		System.out.println("==========");
 		System.out.println("keyword : "+keyword);
 		System.out.println("==========");

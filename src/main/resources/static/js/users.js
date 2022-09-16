@@ -10,6 +10,7 @@ $("#btnUsernameSameCheck").click(() => {
 
 $("#btnLogin").click(() => {
 	login();
+	//login_test();
 });
 
 $("#btnDelete").click(() => {
@@ -85,12 +86,18 @@ function checkUsername(){
 
 
 //------------------------------------------로그인-------------------------------------------------------------
+//function login_test(){
+//	let remember = $("#remember").prop('checked');
+//	console.log(remember);
+//}
+
 function login(){
 	alert("login 함수 호출됨");
 	// 0. 통신 오브젝트 생성 (post요청이기때문에 body가 있음)
 	let data = {
 		username: $("#username").val(),
 		password: $("#password").val(),
+		remember: $("#remember").prop('checked')
 	};
 
 	$.ajax("/login", { // login을 select 하는건데 login만 유일하게 post!
